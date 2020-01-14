@@ -14,16 +14,9 @@ public class StepDefinitions {
     private LoginPage loginPage = new LoginPage();
 
 
-    @Given("^I open \"([^\"]*)\" browser$")
-    public void iOpenTheEconomicCalendarPagePageInBrowser(String browserName) {
-    //TODO: This a common part!
-        indexPage.openBrowser(browserName);
-    }
-
-    @When("^I open \"([^\"]*)\" page$")
-    public void iOpenPage(String pageName) {
-        //TODO: This a common part!
-        loginPage.openPage(pageName);
+    @When("^I open \"([^\"]*)\" page in \"([^\"]*)\" browser$")
+    public void iOpenPage(String pageName, String browserName) {
+        loginPage.openPage(pageName, browserName);
     }
 
     @And("^I login$")
@@ -33,7 +26,7 @@ public class StepDefinitions {
 
     @Then("^I validate that the \"([^\"]*)\" present")
     public void iValidateElementPresent(String elementName){
-        //TODO: This a common part!
+        indexPage.validateThatMenuDisplayed();
     }
 
 
